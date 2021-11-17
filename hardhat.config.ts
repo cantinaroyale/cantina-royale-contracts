@@ -8,6 +8,8 @@ import {networks} from "@defi.org/web3-candies";
 import "hardhat-contract-sizer";
 import {deploy} from "@defi.org/web3-candies/dist/hardhat/deploy";
 import {task} from "hardhat/config";
+import '@nomiclabs/hardhat-ethers';
+import '@openzeppelin/hardhat-upgrades';
 
 function configFile() {
     return require("./.config.json");
@@ -39,7 +41,7 @@ const config: HardhatUserConfig = {
     networks: {
         hardhat: {
             forking: {
-                url: "https://bsc-dataseed4.binance.org",
+                url: "https://bsc-dataseed2.binance.org",
             },
             blockGasLimit: 30e6,
         },
