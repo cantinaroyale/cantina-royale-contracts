@@ -17,7 +17,7 @@ function configFile() {
 
 task("deploy").setAction(async () => {
 
-    const contractAddress: string = await deploy("CantinaRoyaleApes", [],
+    const contractAddress: string = await deploy("CantinaRoyaleSpecies", [],
         10_000_000, 0, true, 6);
 
     console.log("Finished!");

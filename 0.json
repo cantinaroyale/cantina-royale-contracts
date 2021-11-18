@@ -1,0 +1,33 @@
+{
+  "image": "https://cantinaroyale.io/nft/species/images/0.png",
+  "attributes": [
+    {
+      "trait_type": "Specie",
+      "value": "Ape"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Purple Red"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Zombie"
+    },
+    {
+      "trait_type": "Mouth",
+      "value": "Open"
+    },
+    {
+      "trait_type": "Pants",
+      "value": "Military Pouches"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Chainsaw"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Purple Spots"
+    }
+  ]
+}

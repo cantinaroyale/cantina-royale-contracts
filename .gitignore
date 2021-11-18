@@ -6,6 +6,7 @@ typechain-abi/
 typechain-hardhat/
 svgs
 jsons
+.openzeppelin
 
 # Created by https://www.toptal.com/developers/gitignore/api/zsh,node,macos,intellij+all,solidity,soliditytruffle,vscode,sublimetext
 # Edit at https://www.toptal.com/developers/gitignore?templates=zsh,node,macos,intellij+all,solidity,soliditytruffle,vscode,sublimetext

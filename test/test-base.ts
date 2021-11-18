@@ -1,18 +1,16 @@
-import {CantinaRoyaleApes} from "../typechain-hardhat/CantinaRoyaleApes";
+import {CantinaRoyaleSpecies} from "../typechain-hardhat/CantinaRoyaleSpecies";
 import {account, contract, useChaiBN} from "@defi.org/web3-candies";
-import {deployArtifact, resetNetworkFork, tag} from "@defi.org/web3-candies/dist/hardhat";
+import {resetNetworkFork, tag} from "@defi.org/web3-candies/dist/hardhat";
 import '@nomiclabs/hardhat-ethers';
 import '@openzeppelin/hardhat-upgrades';
 
 import { ethers, upgrades } from 'hardhat';
-import {CantinaRoyaleApesBreeding} from "../typechain-hardhat/CantinaRoyaleApesBreeding";
 
 export let deployer: string;
 export let address1: string;
 export let address2: string;
 export let devWallet: string;
-export let cantinaRoyaleApes: CantinaRoyaleApes;
-export let cantinaRoyaleApesBreeding: CantinaRoyaleApesBreeding;
+export let cantinaRoyaleSpecies: CantinaRoyaleSpecies;
 
 useChaiBN();
 
@@ -36,13 +34,9 @@ async function doInitState() {
   address2 = await account(3);
   devWallet = await account(2);
 
-  const CantinaRoyaleApes = await ethers.getContractFactory('CantinaRoyaleApes');
-  const _cantinaRoyaleApes = await upgrades.deployProxy(CantinaRoyaleApes, ['https://catalinaroyale.io/assets/nft/jsons/'], { initializer: 'initialize(string)' });
-  await _cantinaRoyaleApes.deployed();
-  cantinaRoyaleApes = contract<CantinaRoyaleApes>(require('../artifacts/contracts/CantinaRoyaleApes.sol/CantinaRoyaleApes.json').abi, _cantinaRoyaleApes.address);
-
-  const CantinaRoyaleApesBreeding = await ethers.getContractFactory('CantinaRoyaleApesBreeding');
-  const _cantinaRoyaleApesBreeding = await upgrades.upgradeProxy(cantinaRoyaleApes.options.address, CantinaRoyaleApesBreeding);
-  cantinaRoyaleApesBreeding = contract<CantinaRoyaleApesBreeding>(require('../artifacts/contracts/CantinaRoyaleApesBreeding.sol/CantinaRoyaleApesBreeding.json').abi, _cantinaRoyaleApesBreeding.address);
+  const CantinaRoyaleSpecies = await ethers.getContractFactory('CantinaRoyaleSpecies');
+  const _cantinaRoyaleSpecies = await upgrades.deployProxy(CantinaRoyaleSpecies, ['https://cantinaroyale.io/nft/species/jsons/'], { initializer: 'initialize(string)' });
+  await _cantinaRoyaleSpecies.deployed();
+  cantinaRoyaleSpecies = contract<CantinaRoyaleSpecies>(require('../artifacts/contracts/CantinaRoyaleSpecies.sol/CantinaRoyaleSpecies.json').abi, _cantinaRoyaleSpecies.address);
 
 }
