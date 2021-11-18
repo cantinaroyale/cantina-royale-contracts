@@ -1,3 +1,6 @@
+// the breeding is not active on launch
+// the purpose of this file is to demonstrate in tests how it will be added later
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
 
